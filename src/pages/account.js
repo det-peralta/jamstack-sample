@@ -6,14 +6,13 @@ import { Link } from "gatsby"
 const Home = ({ user }) => {
   return <p>Hi, {user.name ? user.name : "friend"}!</p>
 }
-const Settings = () => <p>Settings</p>
-const Billing = () => <p>Billing</p>
 
 const Account = () => {
   if (!isAuthenticated()) {
     login()
     return <p>Redirecting to login...</p>
   }
+  
 
   const user = getProfile()
 
@@ -21,13 +20,10 @@ const Account = () => {
     <>
       <nav>
         <Link to="/account/">Home</Link>{" "}
-        <Link to="/account/settings/">Settings</Link>{" "}
-        <Link to="/account/billing/">Billing</Link>{" "}
+        <Link to="/employees/">List of Employees</Link>{" "}
       </nav>
       <Router>
         <Home path="/account/" user={user} />
-        <Settings path="/account/settings" />
-        <Billing path="/account/billing" />
       </Router>
     </>
   )
