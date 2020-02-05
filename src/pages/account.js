@@ -21,6 +21,7 @@ const Account = () => {
       <nav>
         <Link to="/account/">Home</Link>{" "}
         <Link to="/employees/">List of Employees</Link>{" "}
+        <Link to="/election/">Election</Link>{" "}
       </nav>
       <Router>
         <Home path="/account/" user={user} />
